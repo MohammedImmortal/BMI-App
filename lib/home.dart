@@ -1,9 +1,9 @@
-import 'dart:math';
-import 'result.dart';
 import 'package:flutter/material.dart';
+import 'dart:math';
+import '../result.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -19,9 +19,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Body Mass Index'),
-        centerTitle: true,
-        backgroundColor: Theme.of(context).primaryColor,
+        title: const Text(
+          'Body Mass Index',
+          style: TextStyle(
+            fontSize: 25,
+          ),
+        ),
       ),
       body: SafeArea(
         child: Container(
@@ -95,9 +98,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               Container(
-                color: Theme.of(context).primaryColor,
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height / 16,
+                decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor,
+                    borderRadius: BorderRadius.circular(20)),
                 child: TextButton(
                   onPressed: () {
                     var result = weight / pow(heightVal / 100, 2);

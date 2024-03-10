@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class Result extends StatelessWidget {
   const Result({
-    Key? key,
+    super.key,
     required this.result,
     required this.isMale,
     required this.age,
-  }) : super(key: key);
+  });
 
   final double result;
   final bool isMale;
@@ -30,9 +30,12 @@ class Result extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Result'),
-        centerTitle: true,
-        backgroundColor: Theme.of(context).primaryColor,
+        title: const Text(
+          'Result',
+          style: TextStyle(
+            fontSize: 25,
+          ),
+        ),
       ),
       body: SafeArea(
         child: Container(
